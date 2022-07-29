@@ -9,7 +9,7 @@ anime_dict = pkl.load(open('anime_dict.pkl', 'rb'))
 anime = pd.DataFrame(anime_dict)
 
 selected_anime = st.selectbox(
-    'Selected one of your favourite anime from these:',
+    'Select one of your favourite anime from these:',
     anime['Anime_Name'].values)
 
 
@@ -18,28 +18,6 @@ def recommend(selected_anime):
     #select_prod = df.loc[df['Type'] == 'Electronic']
     return recommended.iloc[anime_idx]
 
-
-# def set_bg_hack_url():
-#     '''
-#      A function to unpack an image from url and set as bg.
-#      Returns
-#      -------
-#      The background.
-#      '''
-#
-#     st.markdown(
-#         f"""
-#          <style>
-#          .stApp {{
-#              background: url("https://wallpaperaccess.com/full/2661458.jpg");
-#              background-size: cover
-#
-#          }}
-#          </style>
-#          """,
-#         unsafe_allow_html=True
-#     )
-#
 # set_bg_hack_url()
 if st.button('Recommend'):
     print('Check out these: ')
